@@ -8,7 +8,7 @@ This is a pretty complicated task. Maybe use this file to organize some intermed
 
 # Word Technicalities
 
-Do not write a parser for this task! Use JS' built-in RegEx for splitting into words. Split the user text by `/\b\w+\b/g` to get words (word boundary, one or more word character, then word boundary). You can choose a different RegEx if you wish.
+Do not write a parser for this task! Use JS' built-in RegEx for splitting into words. Split the user text by `/\w+/g` to get words (one or more word character). You can choose a different RegEx if you wish.
 
 The RegEx is only for the initial grouping into words. Once the user has split up a block of text into groups they will be modifying it through the GUI that you are building. It should be powerful enough to be a functional text editor. Maybe allow them to insert new text at any point using the RegEx splitting technique. Also let them delete words.
 
