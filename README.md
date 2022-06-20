@@ -1,3 +1,3 @@
-This repo is for getting practice with React. We will be setting challenges for ourselves and then building our solutions. Each challenge is given its own branch of this repo and its own description in the tasks folder.
+This branch is for getting a web worker to run in React. It turns out it's as easy as setting up a web worker outside of React in the script scope of the component definition. That was for a static worker. If the component needs its own worker I was able to use a state to store the worker and that was fine too.
 
-This doubles as practice with git branching. Any site-wide setup should be done in the master branch and any task-specific stuff in the task's branch. In particular theme control should be completely contained in the master branch. We should be able to change the look and feel of each project at once by modifying the master branch and then rebasing all the task branches. The task branches are not intended to ever merge with master. We should probably actually be using forks but oh well.
+In short it works exactly as I had hoped. That is a good sign moving forward.
