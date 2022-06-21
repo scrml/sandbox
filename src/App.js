@@ -4,16 +4,18 @@ import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Typ
 import SendIcon from '@mui/icons-material/Send';
 
 const worker = new Worker("worker.js");
-worker.onmessage = function(m) {
-  let data = m.data;
-  console.log("worker sent " + data);
-}
 
 export default function App() {
   const [msg, setMsg] = useState("");
+  const [msgs, setMsgs] = useState([]);
+
+  worker.onmessage = function(m) {
+    let newMsgs = msgs.slice();
+    newMsgs.push(m.data);
+    setMsgs(newMsgs);
+  }
 
   function sendMessage() {
-    console.log("sending " + msg);
     worker.postMessage(msg);
   }
 
@@ -37,7 +39,8 @@ export default function App() {
           }
         ></OutlinedInput>
       </FormControl>
-      <Typography>Messages are currently logged in the browser console. Next step: make them visible.</Typography>
+      <Typography>Messages:</Typography>
+      {msgs.map((pair) => <Typography key={pair[0]}>#{pair[0]}: {pair[1]}</Typography>)}
     </Container>
   );
 }
