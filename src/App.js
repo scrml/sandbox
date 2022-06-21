@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Container from '@mui/material/Container';
-import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Typography } from '@mui/material';
+import { FormControl, IconButton, InputAdornment, InputLabel, List, ListItem, ListItemText, OutlinedInput, Typography } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 
 const worker = new Worker("worker.js");
@@ -40,7 +40,14 @@ export default function App() {
         ></OutlinedInput>
       </FormControl>
       <Typography>Messages:</Typography>
-      {msgs.map((pair) => <Typography key={pair[0]}>#{pair[0]}: {pair[1]}</Typography>)}
+      <List>
+        {msgs.map(pair => (
+          <ListItem alignItems="flex-start" key={pair[0]}>
+            <ListItemText>{pair[0]}</ListItemText>
+            <ListItemText>{pair[1]}</ListItemText>
+          </ListItem>
+        ))}
+      </List>
     </Container>
   );
 }
