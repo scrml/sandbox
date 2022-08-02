@@ -13,9 +13,11 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "latest",
+    "cytoscape": "^3.22.1",
     "react": "latest",
+    "react-cytoscapejs": "^1.2.1",
     "react-dom": "latest",
-    "react-scripts": "latest"
+    "react-scripts": "^5.0.1"
   },
   "browserslist": {
     "production": [
